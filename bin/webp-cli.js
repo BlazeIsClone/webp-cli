@@ -3,7 +3,7 @@
 const { cosmiconfig } = require('cosmiconfig');
 const chalk = require('chalk');
 
-const converter = require('../lib');
+const converter = require('../src');
 
 const { info } = console;
 
