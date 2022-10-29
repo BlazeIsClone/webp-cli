@@ -6,12 +6,11 @@ const { info } = console;
 
 /**
  * Scan options using glob and create webp files using webp-converter
- * @param options { Object }
  */
-const batchWebpConvert = options => {
+const batchWebpConvert = () => {
 	webp.grant_permission();
 
-	const globPattern = options.src;
+	const globPattern = './images/**/*.{png,jpg}';
 
 	glob(globPattern, { ignore: ['node_modules/**/*.*'] }, (err, res) => {
 		if (err) {
@@ -28,7 +27,9 @@ const batchWebpConvert = options => {
 				const filePathSplittedByDot = filePath.split('.');
 				const fileExtension =
 					filePathSplittedByDot[filePathSplittedByDot.length - 1];
-				const destinationPath = filePath.replace(fileExtension, 'webp');
+				const destinationPath = filePath
+					.replace(fileExtension, 'webp')
+					.replace('images', 'webp');
 
 				const result = webp.cwebp(filePath, destinationPath, '-q 80', '-v');
 				result.then(() => {
