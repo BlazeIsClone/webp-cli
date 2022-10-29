@@ -1,0 +1,46 @@
+{
+	"name": "webp-cli",
+	"version": "1.0.0",
+	"description": "A node package for converting .png and .jpg to .webp using the cli",
+	"license": "GPL-2.0",
+	"author": "BlazeIsClone",
+	"bin": "./bin/simple-webp-converter.js",
+	"main": "./lib/index.js",
+	"files": [
+		"bin",
+		"lib"
+	],
+	"scripts": {
+		"start": "./bin/webp-cli.js"
+	},
+	"webp-converter": {
+		"src": "./images/**/*.{png,jpg}"
+	},
+	"keywords": [
+		"webpconverter",
+		"webp-converter",
+		"webp",
+		"image",
+		"convert"
+	],
+	"bugs": {
+		"url": "https://github.com/vkiss/simple-webp-converter/issues"
+	},
+	"homepage": "https://github.com/vkiss/simple-webp-converter#readme",
+	"dependencies": {
+		"chalk": "4.1.2",
+		"cosmiconfig": "^7.0.1",
+		"glob": "^8.0.3",
+		"webp-converter": "^2.3.3"
+	},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.17.0",
+		"eslint": "^8.13.0",
+		"lint-staged": "^12.4.0"
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint --fix"
+		]
+	}
+}
